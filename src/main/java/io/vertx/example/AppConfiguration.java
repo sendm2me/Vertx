@@ -14,6 +14,9 @@ public class AppConfiguration {
   @Autowired
   Environment environment;
 
-
+  int httpPort() {
+    String PORT = System.getenv("PORT");
+    return environment.getProperty("http.port", Integer.class, PORT);
+  }
 
 }
