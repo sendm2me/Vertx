@@ -16,7 +16,7 @@ public class AppConfiguration {
 
   int httpPort() {
     String PORT = System.getenv("PORT");
-    return environment.getProperty("http.port", Integer.class, PORT);
+    return environment.getProperty("http.port", Integer.class, Integer.parseInt(PORT));
   }
 
 }
